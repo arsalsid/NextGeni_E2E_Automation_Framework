@@ -55,7 +55,7 @@ public class DriverFactory {
     @AfterClass
     public void tearDown() {
         Reporter.log("======Browser Closed======", true);
-        driver.quit();
-        driver = null;
+//        driver.quit();
+//        driver = null;
     }
 }

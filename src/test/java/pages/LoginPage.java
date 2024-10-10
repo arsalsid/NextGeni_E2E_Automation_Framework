@@ -9,9 +9,9 @@ import java.io.IOException;
 
 public class LoginPage extends DriverFactory {
 
-    public void verifyTitleOfPage(String expectedValue) {
-        Utilities.AssertTitle(expectedValue);
-    }
+//    public void verifyTitleOfPage(String expectedValue) {
+//        Utilities.AssertTitle(expectedValue);
+//    }
 
     //User login with empty testData
     public void loginWithEmptyUserNameAndEmptyPassword() throws IOException {
