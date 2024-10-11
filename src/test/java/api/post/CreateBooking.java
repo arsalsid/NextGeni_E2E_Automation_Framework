@@ -7,6 +7,7 @@ import utils.JSONUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 public class CreateBooking {
@@ -16,17 +17,35 @@ public class CreateBooking {
 
         String requestBodyPath = "src/test/resources/request_JSON/CreateBookingRequest.json";
         Response response = BaseAPI.setupRequest()
-                                   .body(new File(requestBodyPath))
-                                   .post("/booking");
+                .body(new File(requestBodyPath))
+                .post("/booking");
 
-                                    response.then().log().all();
+        response.then().log().all();
 
         // Print the raw response for debugging
         System.out.println("Raw Response: " + response.asString());
+        String jsonResponse;
 
         // Validate if the response is actually JSON and handle it accordingly
-        if (!response.contentType().contains("application/json")) {
+        if (response.contentType() == null || !response.contentType().contains("application/json")) {
+            String rawResponse = response.asString();
+
+            // Attempt to convert the plain text response to JSON
+            try {
+                // Here you can create a JSON structure from the raw response if necessary
+                Map<String, Object> responseMap = new HashMap<>();
+                responseMap.put("message", rawResponse); // You may want to structure this differently based on the actual response
+                jsonResponse = JSONUtils.convertMapToJSONString(responseMap);
+
+                System.out.println("Converted JSON Response: " + jsonResponse);
+
+            } catch (Exception e) {
+                throw new IllegalStateException("Failed to convert plain text response to JSON: " + e.getMessage());
+            }
             throw new IllegalStateException("Expected JSON response but received: " + response.contentType());
+        }
+        else {
+            jsonResponse = response.asString();
         }
 
         if (response.getStatusCode() != 200) {

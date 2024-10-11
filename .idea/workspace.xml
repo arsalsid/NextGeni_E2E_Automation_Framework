@@ -5,36 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25f674a6-e275-46f6-9e2c-b432de869642" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/API.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/api/base/BaseAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/api/get/GetBooking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/api/post/CreateBooking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/constants/ProductDetailsPageEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/ProductDetailsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/E2EAPIRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/JSONUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/request_JSON/CreateBookingNegativeRequest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/request_JSON/CreateBookingRequest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Initiating Website.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/LandingPage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Testcase-001.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Testcase-002.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Testcase-003.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/Testcase-004.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/User login with Empty credentials Testcase-001.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/User login with Invalid credentials Testcase-002.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screenshots/User login with valid credentials Testcase-003.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/extent-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports/extent-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/constants/LandingPageEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/constants/LandingPageEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/constants/ProductListingPageEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/constants/ProductListingPageEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LandingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ProductListingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ProductListingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/E2ETest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/E2ETest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/Utilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Configuration/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Configuration/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Configuration/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Configuration/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/api/post/CreateBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/api/post/CreateBooking.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +68,7 @@
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.API.xml">
+  <component name="RunManager" selected="TestNG.E2EAPIRunner.createValidDataAndGetIdWithDetails">
     <configuration name="numberOfOccurance" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="numberOfOccurance" />
       <module name="Binder_End_To_End_Automation_Framework" />
@@ -263,8 +235,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.API.xml" />
         <item itemvalue="TestNG.E2EAPIRunner.createValidDataAndGetIdWithDetails" />
+        <item itemvalue="TestNG.API.xml" />
         <item itemvalue="TestNG.webTestNG.xml" />
         <item itemvalue="TestNG.E2ETest.enterSearchItemOnLandingPage" />
         <item itemvalue="Application.numberOfOccurance" />
