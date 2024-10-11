@@ -92,9 +92,12 @@ public class Utilities extends DriverFactory {
         Assert.assertTrue(actualText.equalsIgnoreCase(expectedText));
     }
 
-    public static void validateProduct(String xpath) {
+    public static void validateProduct(String xpath, String expectedText) {
         WebElement element = driver.findElement(By.xpath(xpath));
-        element.getText();
+        String actualText = element.getText();
+        System.out.println("The expected text is : " + actualText);
+        Assert.assertTrue(actualText.equalsIgnoreCase(expectedText));
+
     }
 
     public static boolean isElementPresent(String xpath){
@@ -153,6 +156,10 @@ public class Utilities extends DriverFactory {
         //By TagName
         WebElement iframeElement = driver.findElement(By.tagName("iframe"));
         driver.switchTo().frame(iframeElement);
+    }
+
+    public static void waitForPageLoad(){
+      //  driver.wait();
     }
 
 }

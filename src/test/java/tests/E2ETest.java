@@ -3,19 +3,18 @@ package tests;
 import baseTest.DriverFactory;
 import org.testng.annotations.Test;
 import pages.LandingPage;
+import pages.ProductDetailsPage;
 import pages.ProductListingPage;
 import utils.Utilities;
 import java.lang.reflect.Method;
-
 import static utils.extentReports.ExtentTestManager.startTest;
 
 
 public class E2ETest extends DriverFactory {
 
-    //LoginPage loginPage = new LoginPage();
-    //SearchProductPage searchProduct = new SearchProductPage();
     LandingPage landingPage = new LandingPage();
     ProductListingPage productListingPage = new ProductListingPage();
+    ProductDetailsPage productDetails = new ProductDetailsPage();
     @Test(description = "Verify Title of landingPage", priority = 1)
     public void verifyTitleOfLandingPage(Method method) throws Exception {
         startTest(method.getName(), "Verify Title of landingPage");
@@ -28,15 +27,30 @@ public class E2ETest extends DriverFactory {
         startTest(method.getName(), "Enter Search Item on LandingPage");
         landingPage.searchProduct();
         Utilities.takeScreenshot(driver,"LandingPage");
-        Thread.sleep(10000);
+//        Thread.sleep(10000);
     }
 
-    @Test(description = "Verify Title of ProductPage", priority = 3)
+    @Test(description = "Verify Title of Product Page", priority = 3)
     public void verifyTitleOfProductPage(Method method) throws Exception {
         startTest(method.getName(), "Verify Title of ProductPage");
         productListingPage.verifyTitleOfProductPage("toys");
         Utilities.takeScreenshot(driver,"ProductPage");
     }
+
+    @Test(description = "Select Products of Product Listing Page", priority = 4)
+    public void selectProductsOfProductListingPage(Method method) throws Exception {
+        startTest(method.getName(), "Select Products of ProductListingPage");
+        productListingPage.selectProductItem();
+        Utilities.takeScreenshot(driver,"ProductListingPage");
+    }
+
+    @Test(description = "Add to Cart Product Details Page", priority = 4)
+    public void addToCartOnProductDetailsPage(Method method) throws Exception {
+        startTest(method.getName(), "Add to Cart ProductDetailsPage");
+        productDetails.AddToCartProduct();
+        Utilities.takeScreenshot(driver,"ProductDetailsPage");
+    }
+
 
 //    @Test(description = "User login with empty credentials Testcase-001", priority = 2)
 //    public void userLoginWithEmptyCredentials(Method method) throws Exception {
@@ -51,7 +65,7 @@ public class E2ETest extends DriverFactory {
 //        Utilities.takeScreenshot(driver,"User login with Invalid credentials Testcase-002");
 //    }
 //
-//    @Test(description = "User login with valid credentials Testcase-003", priority = 4)
+//    @Test(description = "User login with valid credentials Testcase-003", priority = 4)ProductListingPageEnum
 //    public void userLoginWithValidCredentials(Method method) throws Exception {
 //        startTest(method.getName(), "User login with valid credentials");
 //        loginPage.loginWithValidUserNameAndPassword();

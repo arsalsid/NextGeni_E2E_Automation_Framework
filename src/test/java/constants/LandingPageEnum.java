@@ -9,7 +9,6 @@ public enum LandingPageEnum {
     ;
 
     public String desc;
-
     LandingPageEnum(String description) {
         this.desc = description;
     }
