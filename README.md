@@ -2,7 +2,7 @@
 # Description:
 This project contains automated tests for UI and API for Next Gen Innovation using Java with Selenium , RestAssured and TestNG framework. 
 The tests are designed to run on UI browser chrome, firefox and Edge along with Booking API for POST and GET request.
-The tests follow Page Object Model Design pattern with Extent reporting. Moreover, The version controlling we used for code deployment is GitHub.
+The tests follow Page Object Model Design pattern with Extent reporting. Moreover, The version controlling is used for code deployment is GitHub.
 
 
 # Tech and Tools:
@@ -11,6 +11,7 @@ The tests follow Page Object Model Design pattern with Extent reporting. Moreove
 * Selenium 4 used for Web UI automation
 * Rest Assured library for RestAPI automation
 * TestNG Framework: Used for Test case priority and execution of testcases
+* JSON library for json response
 * Design Pattern: Page Object Model(POM)
 * Extent Report: Used as a Reporting
 * Maven: Used as a Build Management tool
