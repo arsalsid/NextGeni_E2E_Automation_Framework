@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import pages.LandingPage;
 import pages.ProductDetailsPage;
 import pages.ProductListingPage;
+import pages.ShoppingCartPage;
 import utils.Utilities;
 import java.lang.reflect.Method;
 import static utils.extentReports.ExtentTestManager.startTest;
@@ -15,6 +16,8 @@ public class E2ETest extends DriverFactory {
     LandingPage landingPage = new LandingPage();
     ProductListingPage productListingPage = new ProductListingPage();
     ProductDetailsPage productDetails = new ProductDetailsPage();
+
+    ShoppingCartPage shoppingCart = new ShoppingCartPage();
     @Test(description = "Verify Title of landingPage", priority = 1)
     public void verifyTitleOfLandingPage(Method method) throws Exception {
         startTest(method.getName(), "Verify Title of landingPage");
@@ -27,7 +30,6 @@ public class E2ETest extends DriverFactory {
         startTest(method.getName(), "Enter Search Item on LandingPage");
         landingPage.searchProduct();
         Utilities.takeScreenshot(driver,"LandingPage");
-//        Thread.sleep(10000);
     }
 
     @Test(description = "Verify Title of Product Page", priority = 3)
@@ -44,40 +46,26 @@ public class E2ETest extends DriverFactory {
         Utilities.takeScreenshot(driver,"ProductListingPage");
     }
 
-    @Test(description = "Add to Cart Product Details Page", priority = 4)
+    @Test(description = "Add to Cart Product Details Page", priority = 5)
     public void addToCartOnProductDetailsPage(Method method) throws Exception {
         startTest(method.getName(), "Add to Cart ProductDetailsPage");
         productDetails.AddToCartProduct();
         Utilities.takeScreenshot(driver,"ProductDetailsPage");
     }
 
+    @Test(description = "Verify Title of Shopping Cart Page", priority = 6)
+    public void verifyTitleOfShoppingCartPage(Method method) throws Exception {
+        startTest(method.getName(), "Verify Title of Shopping Cart Page");
+        shoppingCart.verifyTitleOfPage("Amazon.com Shopping Cart");
+        Utilities.takeScreenshot(driver,"Shopping Cart Page");
+    }
 
-//    @Test(description = "User login with empty credentials Testcase-001", priority = 2)
-//    public void userLoginWithEmptyCredentials(Method method) throws Exception {
-//        startTest(method.getName(), "User login with Empty credentials");
-//        loginPage.loginWithEmptyUserNameAndEmptyPassword();
-//        Utilities.takeScreenshot(driver,"User login with Empty credentials Testcase-001");
+//    @Test(description = "Navigate Back To LandingPage", priority = 6)
+//    public void navigateBackToLandingPage(Method method) throws Exception {
+//        startTest(method.getName(), "Navigate Back To LandingPage");
+//        shoppingCart.navigateBackToLandingPage();
+//        Utilities.takeScreenshot(driver,"Shopping Cart Page");
 //    }
-//    @Test(description = "User login with Invalid credentials Testcase-002", priority = 3)
-//    public void userLoginWithInvalidCredentials(Method method) throws Exception {
-//        startTest(method.getName(), "User login with Invalid credentials");
-//        loginPage.loginWithInvalidUserNameAndInvalidPassword();
-//        Utilities.takeScreenshot(driver,"User login with Invalid credentials Testcase-002");
-//    }
-//
-//    @Test(description = "User login with valid credentials Testcase-003", priority = 4)ProductListingPageEnum
-//    public void userLoginWithValidCredentials(Method method) throws Exception {
-//        startTest(method.getName(), "User login with valid credentials");
-//        loginPage.loginWithValidUserNameAndPassword();
-//        Utilities.takeScreenshot(driver,"User login with valid credentials Testcase-003");
-//
-//    }
-//
-//    @Test(description = "User Search Various Products Testcase-004", priority = 4)
-//    public void userSearchVariousProducts(Method method) throws Exception {
-//        startTest(method.getName(), "User Search Various Products");
-//        searchProduct.userSearchVariousProducts();
-//        Utilities.takeScreenshot(driver,"User Search Various Products Testcase-004");
-//
-//    }
+
+
 }

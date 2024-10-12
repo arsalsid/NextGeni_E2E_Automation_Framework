@@ -1,12 +1,17 @@
 package api.post;
 
 import api.base.BaseAPI;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import io.restassured.response.Response;
-import org.apache.groovy.json.internal.IO;
+import io.restassured.specification.RequestSpecification;
 import utils.JSONUtils;
+import utils.extentReports.ExtentTestManager;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,8 +21,10 @@ public class CreateBooking {
     public String createNewBooking() throws IOException {
 
         String requestBodyPath = "src/test/resources/request_JSON/CreateBookingRequest.json";
-        Response response = BaseAPI.setupRequest()
-                .body(new File(requestBodyPath))
+
+        RequestSpecification requestSpecification = BaseAPI.setupRequest();
+        Response response = requestSpecification
+                .body(JSONUtils.readRequestFile(requestBodyPath))
                 .post("/booking");
 
         response.then().log().all();
@@ -59,7 +66,7 @@ public class CreateBooking {
         return bookingId;
     }
 
-    public void createInvalidBooking() throws IOException {
+    public String createInvalidBooking() throws IOException {
 
         String requestBodyPath = "src/test/resources/request_JSON/CreateBookingRequest.json";
         Response response = BaseAPI.setupRequest()
@@ -72,5 +79,6 @@ public class CreateBooking {
 
         // Save response even if the request fail (for debugging)
         JSONUtils.saveResponseToFile(response, "Negative_Booking_Response.json");
+        return requestBodyPath;
     }
 }

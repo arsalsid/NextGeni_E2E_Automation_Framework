@@ -18,6 +18,6 @@ public class ProductListingPage extends DriverFactory {
         String getExpectedResult = PropertyReader.getInstance().readProperty("product1ExpectedPrice");
         Utilities.validateText(ProductListingPageEnum.VALIDATE_PRICE_OF_ITEM1.getLocator(), getExpectedResult);
         System.out.println("Product Item Name: " +item1);
-        Utilities.clickOnButton(ProductListingPageEnum.CLICK_ON_ITEM1.getLocator());
+        Utilities.toBeClickOnButton(ProductListingPageEnum.CLICK_ON_ITEM1.getLocator());
     }
 }

@@ -19,8 +19,9 @@ public class Utilities extends DriverFactory {
         new WebDriverWait(driver, Duration.ofSeconds(50)).until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public static void waitForElementToBeClickable(WebElement element) {
-        new WebDriverWait(driver, Duration.ofSeconds(110)).until(ExpectedConditions.elementToBeClickable(element));
+    public static void waitForElementToBeClickable(String xpath) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(110));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
     }
 
     public static void waitForVisibility(WebElement element) {
@@ -43,7 +44,7 @@ public class Utilities extends DriverFactory {
     }
     public static void toBeClickOnButton(String xpath){
         try {
-            waitForElementToBeClickable(driver.findElement(By.xpath(xpath)));
+            waitForElementToBeClickable(xpath);
             driver.findElement(By.xpath(xpath)).click();
         }catch (NoSuchElementException e){
             System.out.println("Unable to click element with the given element Locator" + xpath);
@@ -156,6 +157,23 @@ public class Utilities extends DriverFactory {
         //By TagName
         WebElement iframeElement = driver.findElement(By.tagName("iframe"));
         driver.switchTo().frame(iframeElement);
+    }
+
+    public static void clickElementUsingJS(WebDriver driver, String xpath) {
+
+        try {
+            // Use JavascriptExecutor to perform the click
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].click();", xpath);
+        } catch (Exception e) {
+            System.out.println("Unable to click the element using JavaScript. Error: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    public static void scrollDown(WebDriver driver, int pixels) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0," + pixels + ");");
     }
 
     public static void waitForPageLoad(){
