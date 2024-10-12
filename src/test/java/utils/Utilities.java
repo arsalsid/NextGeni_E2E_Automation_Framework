@@ -135,49 +135,8 @@ public class Utilities extends DriverFactory {
         takeScreenshot(driver,methodName);
 
     }
-
-    public static void dynamicHandlingTable(String xpath) {
-        List<WebElement> col = driver.findElements(By.xpath(xpath));
-        System.out.println("Columns:" +col.size());
-
-        List<WebElement> row = driver.findElements(By.xpath(xpath));
-        System.out.println("Row:" +row.size());
-    }
-
-    public static void handlingWindowAlert(){
-        Alert alert = driver.switchTo().alert();
-        alert.getText();
-        alert.accept();
-        alert.dismiss();
-    }
-
-    public static void handlingIframe(){
-        //By Index values
-        driver.switchTo().frame(0);
-        //By TagName
-        WebElement iframeElement = driver.findElement(By.tagName("iframe"));
-        driver.switchTo().frame(iframeElement);
-    }
-
-    public static void clickElementUsingJS(WebDriver driver, String xpath) {
-
-        try {
-            // Use JavascriptExecutor to perform the click
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].click();", xpath);
-        } catch (Exception e) {
-            System.out.println("Unable to click the element using JavaScript. Error: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }
-
     public static void scrollDown(WebDriver driver, int pixels) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0," + pixels + ");");
     }
-
-    public static void waitForPageLoad(){
-      //  driver.wait();
-    }
-
 }
