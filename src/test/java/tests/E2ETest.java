@@ -59,13 +59,13 @@ public class E2ETest extends DriverFactory {
         shoppingCart.verifyTitleOfPage("Amazon.com Shopping Cart");
         Utilities.takeScreenshot(driver,"Shopping Cart Page");
     }
+    @Test(description = "Get SubTotal Price Of Shopping Cart Product", priority = 7)
+    public void getSubTotalPriceOfProduct(Method method) throws Exception {
+        startTest(method.getName(), "Verify Subtotal Page of Shopping Cart Page");
+        shoppingCart.getSubTotalPriceOfProduct();
+        Utilities.takeScreenshot(driver,"Shopping Cart Page");
+    }
 
-//    @Test(description = "Navigate Back To LandingPage", priority = 6)
-//    public void navigateBackToLandingPage(Method method) throws Exception {
-//        startTest(method.getName(), "Navigate Back To LandingPage");
-//        shoppingCart.navigateBackToLandingPage();
-//        Utilities.takeScreenshot(driver,"Shopping Cart Page");
-//    }
 
 
 }
