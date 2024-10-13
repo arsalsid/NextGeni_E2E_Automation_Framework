@@ -18,13 +18,5 @@ public class ProductDetailsPage extends DriverFactory {
         Utilities.validateText(ProductDetailsPageEnum.ADDED_TO_CART_SUCESSFULLY.getLocator(), getExpectedCartMessage);
         Utilities.waitForElementToBeClickable(ProductDetailsPageEnum.CLICK_ON_GOTO_CART_BTN.getLocator());
         Utilities.clickOnButton(ProductDetailsPageEnum.CLICK_ON_GOTO_CART_BTN.getLocator());
-
-
-//        Utilities.scrollDown(driver,200);
-//        Utilities.clickOnButton(ProductDetailsPageEnum.CLICK_ON_PRODUCT2.getLocator());
-//        String getExpectedPrice = PropertyReader.getInstance().readProperty("expectedPriceOf2ndProductDetails");
-//        Utilities.validateProduct(ProductDetailsPageEnum.VALIDATE_PRICE_OF_ITEM2_PRODUCT_DETAILS.getLocator(),getExpectedPrice);
-//
-
     }
 }
